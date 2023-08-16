@@ -1,6 +1,9 @@
-![Home](/src/assets/Home.png)
-![Winner](/src/assets/Winner.png)
-![Empate](/src/assets/Winner.png)
+<div style="display: flex;">
+  <img src="/src/assets/Home.png" alt="Home" style="width:33%;">
+  <img src="/src/assets/Winner.png" alt="Winner" style="width: 33%;">
+  <img src="/src/assets/Empate.png" alt="Empate" style="width: 33%;">
+</div>
+
 
 # React + Vite  
 
