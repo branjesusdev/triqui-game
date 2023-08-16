@@ -11,7 +11,7 @@
 pnpm create create vite
 ```
 
-[![Open in GitHub VSCode](https://github.com/codespaces/badge.svg)](https://vscode.dev/github/branfon1/landing-lavelada)
+[![Open in GitHub VSCode](https://github.com/codespaces/badge.svg)](https://vscode.dev/github/branfon1/triqui-game)
 
 ## ⚙️ Stack
 
