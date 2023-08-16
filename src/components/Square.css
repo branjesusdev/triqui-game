@@ -1,0 +1,27 @@
+.square {
+    font-size: 50px;
+    border: 1px solid #eee;
+    padding: 20px 45px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px 1px #eeeeee77;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(14px);
+    width: 50px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square:not(.isSelected):hover {
+    transform: scale(1.01);
+}
+
+.square.isSelected {
+    background-color: rgba(253, 223, 71, 0.342) !important;
+    filter: drop-shadow(0 0 .7em rgba(253, 223, 71, 0.986)) !important;
+    transition: .3s ease all;
+    cursor: auto;
+}
