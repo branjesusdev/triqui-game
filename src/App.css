@@ -1,10 +1,28 @@
 .board {
     width: fit-content;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
 }
 
-.board h1.title{
-    margin-bottom: 5rem;
+.board .content-game {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+}
+
+.board .content-game .icon-board-refresh {
+    margin-bottom: 1rem;
+    color: #80e27d;
+    cursor: pointer;
+}
+
+.board .content-game .icon-board-refresh:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 1em rgba(64, 206, 139, 0.247));
 }
 
 .board .game {
@@ -16,7 +34,6 @@
 .board .turn {
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
     gap: 2rem;
 }
 
@@ -69,7 +86,15 @@
     cursor: auto;
 }
 
-.board .winner footer button {
+.board .winner footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.board .winner footer .newGame {
     font-size: 16px;
     cursor: auto;
     background-color: rgb(253 224 71 / 1);
@@ -81,9 +106,19 @@
     cursor: pointer;
 }
 
-.board .winner footer button:hover {
+.board .winner footer .newGame:hover {
     background-color: rgb(253 224 71 / 1);
     filter: drop-shadow(0 0 1em rgba(253, 223, 71, 0.247));
     border: 1px solid #e4e7e9;
     color: #162529;
+}
+
+.board .winner footer .viewGame {
+    background: transparent;
+    border: none;
+    text-decoration: underline;
+    font-size: 14px;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    color: #fff;
 }

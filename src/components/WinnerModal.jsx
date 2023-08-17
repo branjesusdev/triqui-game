@@ -1,6 +1,6 @@
 import Square from "./Square";
 
-export default function WinnerModal({ winner, handleResetGame }) {
+export default function WinnerModal({ winner, handleResetGame, handleCloseWinner }) {
   if (winner === null) return null;
 
   const winnerText = winner !== false ? "Ganó:" : "Empate";
@@ -15,7 +15,8 @@ export default function WinnerModal({ winner, handleResetGame }) {
         <article>{winner && <Square>{winner}</Square>}</article>
 
         <footer>
-          <button onClick={handleResetGame}>Empezar de nuevo</button>
+          <button className="newGame" onClick={handleResetGame}>Empezar de nuevo</button>
+          <button className="viewGame" onClick={handleCloseWinner}>Ver resultado</button>
         </footer>
       </div>
     </section>

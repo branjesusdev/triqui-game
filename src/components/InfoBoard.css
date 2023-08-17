@@ -1,0 +1,13 @@
+.board-header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.board-header-description {
+  max-width: 55ch;
+  font-size: 15px;
+  color: #fff;
+}

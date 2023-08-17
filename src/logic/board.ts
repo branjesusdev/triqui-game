@@ -19,3 +19,8 @@ export const checkEndGame = (newBoard) => {
   // Revisamos si hay empate
   return newBoard.every((square) => square !== null);
 };
+
+export const checkSquare = (newBoard) => {
+  // Revisamos si existe alguno checkeado 
+  return newBoard.every((square) => console.log);
+};

@@ -4,13 +4,26 @@ import confetti from "canvas-confetti";
 import "./App.css";
 import Square from "./components/Square";
 import WinnerModal from "./components/WinnerModal";
+import InfoBoard from "./components/InfoBoard";
+import RefreshBoard from "./components/refreshBoard";
 
 import { TURNS } from "./models/Turns";
 import { checkToBoardFrom, checkEndGame } from "./logic/board";
+import { resetGameToStorage, saveGameToStorage, getKeyValueToStorage } from './logic/storage/index'
 
 function App() {
-  const [board, setBoard] = useState(Array(9).fill(null));
-  const [turn, setTurn] = useState(TURNS.X);
+  const [board, setBoard] = useState( () => {
+    const boardFormStorage = getKeyValueToStorage({ key : 'board'});
+    return boardFormStorage ? JSON.parse(boardFormStorage) : Array(9).fill(null)
+  });
+  const [turn, setTurn] = useState(() => {
+    const turnFromStorage = getKeyValueToStorage({ key: 'turn'});
+    return turnFromStorage ?? TURNS.X
+  });
+  const [squeareCheck, setSqueareCheck] = useState(() => {
+    const squareCheckFromStorage = getKeyValueToStorage({key: 'squareCheckReset'})
+    return squareCheckFromStorage ?? false
+  });
 
   // null es que no hay ganador, false un empate
   const [winner, setWinner] = useState(null);
@@ -22,8 +35,10 @@ function App() {
     const newBoard = [...board];
     newBoard[index] = turn;
 
+    saveGameToStorage( { board: newBoard, turn: newTurn, squeareCheck } )
     setTurn(newTurn);
     setBoard(newBoard);
+    setSqueareCheck(true)
 
     const newWinner = checkToBoardFrom(newBoard);
 
@@ -37,21 +52,33 @@ function App() {
     setBoard(Array(9).fill(null));
     setWinner(null);
     setTurn(TURNS.X);
+    setSqueareCheck(false)
+    resetGameToStorage()
   };
+
+  const handleCloseWinner = () => {
+    setWinner(null)
+  }
 
   return (
     <>
       <main className="board">
-        <h1 className="title">TRIQUI</h1>
+        <InfoBoard></InfoBoard>
 
-        <section className="game">
-          {board.map((square, index) => {
-            return (
-              <Square key={index} index={index} updateBoard={updateBoard}>
-                {square}
-              </Square>
-            );
-          })}
+        <section className="content-game">
+          <RefreshBoard 
+            handleResetGame={handleResetGame} 
+            squeareCheck={squeareCheck}></RefreshBoard>
+
+          <aside className="game">
+            {board.map((square, index) => {
+              return (
+                <Square key={index} index={index} updateBoard={updateBoard}>
+                  {square}
+                </Square>
+              );
+            })}
+          </aside>
         </section>
 
         <section className="turn">
@@ -62,6 +89,7 @@ function App() {
         <WinnerModal
           handleResetGame={handleResetGame}
           winner={winner}
+          handleCloseWinner={handleCloseWinner}
         ></WinnerModal>
       </main>
     </>

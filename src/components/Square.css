@@ -21,7 +21,7 @@
 
 .square.isSelected {
     background-color: rgba(253, 223, 71, 0.342) !important;
-    filter: drop-shadow(0 0 .7em rgba(253, 223, 71, 0.986)) !important;
+    filter: drop-shadow(0 0 .5em rgba(253, 223, 71, 0.986)) !important;
     transition: .3s ease all;
     cursor: auto;
 }
