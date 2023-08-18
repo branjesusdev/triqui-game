@@ -28,6 +28,9 @@ body {
   min-height: 100vh;
   justify-content: center;
   align-items: center;
+  background-image: url(/src/assets/bg-end-down.png);
+  background-position: 0 0;
+  background-size: 60rem;
 }
 
 h1 {

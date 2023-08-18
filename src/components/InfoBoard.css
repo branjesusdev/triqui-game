@@ -9,5 +9,6 @@
 .board-header-description {
   max-width: 55ch;
   font-size: 15px;
-  color: #fff;
+  opacity: 0.8;
+  font-weight: 600;
 }

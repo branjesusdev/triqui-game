@@ -2,8 +2,11 @@
   <img src="/src/assets/Home.png" alt="Home" style="width:300px;">
   <img src="/src/assets/Winner.png" alt="Winner" style="width: 300px;">
   <img src="/src/assets/Empate.png" alt="Empate" style="width: 300px;">
+  <img src="/src/assets/SEO.png" alt="Empate" style="width: 300px;">
 </div>
 
+
+> 🔗 **Sitio WEB:** https://triqui-game-neon.vercel.app/
 
 # React + Vite  
 
