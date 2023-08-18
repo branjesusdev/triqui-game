@@ -37,9 +37,6 @@ devDependencies:
   eslint-plugin-react-refresh:
     specifier: ^0.4.3
     version: 0.4.3(eslint@8.45.0)
-  prop-types:
-    specifier: ^15.8.1
-    version: 15.8.1
   standard:
     specifier: ^17.1.0
     version: 17.1.0
